@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crianças Seguras na Internet — Guia Completo para Pais</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -146,8 +147,11 @@
   .book-wrap {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 40px;
     margin: 0 auto 48px;
     animation: fadeUp 0.9s 0.3s ease both;
+    max-width: 900px;
   }
 
   .book {
@@ -158,6 +162,7 @@
     transform: perspective(1000px) rotateY(-18deg) rotateX(4deg);
     filter: drop-shadow(0 40px 60px rgba(0,0,0,0.7));
     transition: transform 0.5s ease;
+    flex-shrink: 0;
   }
   .book:hover { transform: perspective(1000px) rotateY(-8deg) rotateX(2deg); }
 
@@ -185,6 +190,29 @@
 
   .book-spine {
     display: none;
+  }
+
+  /* VIDEO */
+  .video-wrap {
+    flex: 1.2;
+    max-width: 550px;
+    position: relative;
+    animation: fadeUp 0.9s 0.4s ease both;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    background: var(--navy);
+  }
+
+  .video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   /* PRICE BLOCK */
@@ -614,6 +642,12 @@
     font-size: 18px;
     background: rgba(0,180,216,0.1);
     border: 1px solid rgba(0,180,216,0.25);
+    overflow: hidden;
+  }
+  .testi-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .testi-name { font-size: 14px; font-weight: 600; }
   .testi-role { font-size: 12px; color: var(--gray); }
@@ -908,6 +942,9 @@
     .chapter { grid-template-columns: 1fr; }
     .chapter-num { display: none; }
     .price-big { font-size: 52px; }
+    .book-wrap { flex-direction: column; gap: 32px; }
+    .book { width: 280px; }
+    .video-wrap { max-width: 100%; }
   }
 
   /* ── STICKY CTA BAR (mobile) ── */
@@ -946,13 +983,11 @@
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BAR -->
 <div class="bar">
   <span>LANÇAMENTO</span>
   Oferta especial de lançamento — R$47 por apenas <strong>R$27</strong> &nbsp;·&nbsp; Acesso imediato após a compra
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-eyebrow">Guia completo para pais e mães</div>
@@ -964,6 +999,15 @@
     </p>
 
     <div class="book-wrap">
+      <div class="video-wrap">
+        <div class="video-container">
+          <video id="heroVideo" controls playsinline loop>
+            <source src="assets/criativo_video_final.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+          </video>
+        </div>
+      </div>
+      
       <div class="book">
         <img src="assets/mockup_fixo.png" alt="Crianças Seguras na Internet - Guia Completo para Pais">
       </div>
@@ -984,7 +1028,6 @@
   </div>
 </section>
 
-<!-- FEAR SECTION -->
 <section class="fear">
   <div class="container">
     <div class="section-label">A realidade que ninguém quer ver</div>
@@ -1017,7 +1060,6 @@
   </div>
 </section>
 
-<!-- FOR WHO -->
 <section class="for-who">
   <div class="container">
     <div class="section-label">Este guia é para você</div>
@@ -1054,7 +1096,6 @@
   </div>
 </section>
 
-<!-- CONTENT SECTION -->
 <section class="content-section">
   <div class="container">
     <div class="section-label">O que você vai aprender</div>
@@ -1147,7 +1188,6 @@
   </div>
 </section>
 
-<!-- APPROACH -->
 <section class="approach">
   <div class="container">
     <div class="section-label">Nossa filosofia</div>
@@ -1189,7 +1229,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="container--wide">
     <div class="container">
@@ -1204,7 +1243,7 @@
         <div class="testi-stars">★★★★★</div>
         <div class="testi-text">"Eu sabia que existia perigo, mas não sabia como falar sobre isso sem deixar minha filha com medo de tudo. Este guia me deu as palavras certas. Fizemos o Contrato de Confiança juntas e ela fez questão de colorir e pendurar no quarto."</div>
         <div class="testi-author">
-          <div class="testi-avatar">👩</div>
+          <div class="testi-avatar"><img src="assets/feedback_2.png" alt="Camila R."></div>
           <div>
             <div class="testi-name">Camila R.</div>
             <div class="testi-role">Mãe de Isabela, 9 anos · São Paulo</div>
@@ -1216,7 +1255,7 @@
         <div class="testi-stars">★★★★★</div>
         <div class="testi-text">"Meu filho de 11 anos era viciado em Roblox e eu tinha zero controle. Depois do guia configurei tudo no console em menos de 30 minutos. O capítulo sobre grooming foi chocante — não imaginava que funcionava assim."</div>
         <div class="testi-author">
-          <div class="testi-avatar">👨</div>
+          <div class="testi-avatar"><img src="assets/feedback_1.png" alt="Marcos T."></div>
           <div>
             <div class="testi-name">Marcos T.</div>
             <div class="testi-role">Pai de Lucas, 11 anos · Belo Horizonte</div>
@@ -1228,7 +1267,7 @@
         <div class="testi-stars">★★★★★</div>
         <div class="testi-text">"Três dias depois de ler, minha filha veio me contar que um 'amigo' do Roblox tinha pedido para conversar no WhatsApp. Ela recusou, bloqueou e me contou sorrindo. Sem pânico, sem drama. Exatamente como o guia ensinou."</div>
         <div class="testi-author">
-          <div class="testi-avatar">👩</div>
+          <div class="testi-avatar"><img src="assets/feedback_3.png" alt="Patricia M."></div>
           <div>
             <div class="testi-name">Patricia M.</div>
             <div class="testi-role">Mãe de Sofia, 8 anos · Curitiba</div>
@@ -1239,7 +1278,7 @@
   </div>
 </section>
 
-<!-- BONUS -->
+
 <section class="bonus-section">
   <div class="container">
     <div class="section-label">Bônus exclusivos</div>
@@ -1276,7 +1315,6 @@
   </div>
 </section>
 
-<!-- GUARANTEE -->
 <section class="guarantee">
   <div class="container">
     <div class="guarantee-inner">
@@ -1293,7 +1331,6 @@
   </div>
 </section>
 
-<!-- CTA FINAL -->
 <section class="cta-final" id="comprar">
   <div class="container">
     <h2>A conversa que<br><em style="font-style:italic; color:var(--navy-mid);">salva crianças</em><br>começa aqui.</h2>
@@ -1320,7 +1357,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="faq">
   <div class="container">
     <div class="section-label">Dúvidas frequentes</div>
@@ -1353,7 +1389,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <p>
@@ -1364,7 +1399,6 @@
   </div>
 </footer>
 
-<!-- STICKY BAR -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-bar-text">
     <strong>R$27</strong><br>Acesso imediato + 3 bônus
@@ -1373,7 +1407,6 @@
 </div>
 
 <script>
-  // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1382,7 +1415,6 @@
   }, { threshold: 0.12 });
   revealEls.forEach(el => obs.observe(el));
 
-  // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.closest('.faq-item');
@@ -1392,19 +1424,26 @@
     });
   });
 
-  // Sticky bar
   const stickyBar = document.getElementById('stickyBar');
   window.addEventListener('scroll', () => {
     stickyBar.classList.toggle('show', window.scrollY > 600);
   });
 
-  // Smooth scroll for anchors
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
       const target = document.querySelector(a.getAttribute('href'));
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
+  });
+
+  window.addEventListener('load', () => {
+    const video = document.getElementById('heroVideo');
+    if (video) {
+      video.play().catch(err => {
+        console.log('Autoplay com áudio bloqueado pelo navegador. Usuário precisa interagir primeiro.');
+      });
+    }
   });
 </script>
 
