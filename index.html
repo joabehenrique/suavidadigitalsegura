@@ -156,7 +156,7 @@
 
   .book {
     position: relative;
-    width: 300px;
+    width: 400px;
     height: auto;
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateY(-18deg) rotateX(4deg);
@@ -194,10 +194,11 @@
 
   /* VIDEO */
   .video-wrap {
-    flex: 1.2;
-    max-width: 550px;
+    width: 320px;
+    max-width: 320px;
     position: relative;
     animation: fadeUp 0.9s 0.4s ease both;
+    flex-shrink: 0;
   }
 
   .video-container {
@@ -207,12 +208,14 @@
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     background: var(--navy);
+    aspect-ratio: 9 / 16;
   }
 
   .video-container video {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: cover;
   }
 
   /* PRICE BLOCK */
@@ -943,8 +946,8 @@
     .chapter-num { display: none; }
     .price-big { font-size: 52px; }
     .book-wrap { flex-direction: column; gap: 32px; }
-    .book { width: 280px; }
-    .video-wrap { max-width: 100%; }
+    .book { width: 350px; }
+    .video-wrap { max-width: 100%; width: 280px; }
   }
 
   /* ── STICKY CTA BAR (mobile) ── */
@@ -1001,7 +1004,7 @@
     <div class="book-wrap">
       <div class="video-wrap">
         <div class="video-container">
-          <video id="heroVideo" controls playsinline loop>
+          <video id="heroVideo" controls playsinline loop autoplay>
             <source src="assets/criativo_video_final.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
           </video>
@@ -1440,8 +1443,10 @@
   window.addEventListener('load', () => {
     const video = document.getElementById('heroVideo');
     if (video) {
-      video.play().catch(err => {
-        console.log('Autoplay com áudio bloqueado pelo navegador. Usuário precisa interagir primeiro.');
+      video.muted = false;
+      video.play().catch(() => {
+        video.muted = true;
+        video.play();
       });
     }
   });
