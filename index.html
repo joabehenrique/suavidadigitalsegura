@@ -8,11 +8,29 @@
 var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
 ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
-  ttq.load('D6JK4D3C77U4M17588MG');
+  ttq.load('D6JKBUJC77U4B725OCMG');
   ttq.page();
 }(window, document, 'ttq');
 </script>
 <!-- TikTok Pixel Code End -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4710974462467197');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4710974462467197&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1035,7 +1053,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <div class="price-badge">⚡ Oferta de lançamento</div>
     </div>
 
-    <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-cta hotmart-fb hotmart__button-checkout" onclick="ttq.track('InitiateCheckout')">
+    <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-cta hotmart-fb hotmart__button-checkout" onclick="ttq.track('InitiateCheckout'); fbq('track', 'InitiateCheckout');">
       Quero proteger meu filho agora
       <span class="arrow">→</span>
     </a>
@@ -1359,7 +1377,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </div>
 
     <br>
-    <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-cta hotmart-fb hotmart__button-checkout" style="font-size:18px; padding:20px 52px;" onclick="ttq.track('InitiateCheckout')">
+    <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-cta hotmart-fb hotmart__button-checkout" style="font-size:18px; padding:20px 52px;" onclick="ttq.track('InitiateCheckout'); fbq('track', 'InitiateCheckout');">
       Comprar agora com garantia
       <span class="arrow">→</span>
     </a>
@@ -1419,7 +1437,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <div class="sticky-bar-text">
     <strong>R$27</strong><br>Acesso imediato + 3 bônus
   </div>
-  <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-sticky hotmart-fb hotmart__button-checkout">Comprar agora →</a>
+  <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-sticky hotmart-fb hotmart__button-checkout" onclick="ttq.track('InitiateCheckout'); fbq('track', 'InitiateCheckout');">Comprar agora →</a>
 </div>
 
 <script>
