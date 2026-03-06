@@ -104,6 +104,85 @@ src="https://www.facebook.com/tr?id=4710974462467197&ev=PageView&noscript=1"
   }
   .bar span { background: var(--navy); color: var(--gold); padding: 2px 8px; border-radius: 4px; margin-right: 6px; font-size: 11px; letter-spacing: 0.08em; }
 
+  .countdown-bar {
+    background: #0F172A;
+    color: var(--white);
+    text-align: center;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    z-index: 10;
+  }
+  .countdown-label {
+    color: #94A3B8;
+    letter-spacing: 0.03em;
+  }
+  .countdown-label strong {
+    color: var(--white);
+  }
+  .countdown-digits {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+  .cd-block {
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    padding: 3px 6px;
+    border-radius: 4px;
+    min-width: 24px;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+  .cd-sep {
+    color: var(--gold);
+    font-size: 4px;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0 1px;
+  }
+  .cd-unit {
+    font-size: 9px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    text-align: center;
+    margin-top: 2px;
+  }
+  .cd-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .countdown-pulse {
+    width: 8px;
+    height: 8px;
+    background: #EF4444;
+    border-radius: 50%;
+    animation: cdPulse 1s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes cdPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+  @media (max-width: 700px) {
+    .countdown-bar { flex-wrap: wrap; gap: 8px; padding: 8px 16px; }
+    .countdown-label { font-size: 16px; }
+    .cd-block { font-size: 16px; min-width: 30px; }
+  }
+
   .hero {
     position: relative;
     z-index: 1;
@@ -1043,9 +1122,21 @@ src="https://www.facebook.com/tr?id=4710974462467197&ev=PageView&noscript=1"
 </head>
 <body>
 
+<div class="countdown-bar" id="countdownBar">
+  <div class="countdown-pulse"></div>
+  <span class="countdown-label">Oferta expira em:</span>
+  <div class="countdown-digits">
+    <div class="cd-item"><div class="cd-block" id="cdH">00</div><span class="cd-unit">horas</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-item"><div class="cd-block" id="cdM">14</div><span class="cd-unit">min</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-item"><div class="cd-block" id="cdS">59</div><span class="cd-unit">seg</span></div>
+  </div>
+</div>
+
 <div class="bar">
   <span>LANÇAMENTO</span>
-  Oferta especial de lançamento — R$47 por apenas <strong>R$27</strong> &nbsp;·&nbsp; Acesso imediato após a compra
+  Baixe agora, de R$47 por apenas <strong>R$27</strong> &nbsp;·&nbsp; Acesso imediato após o pagamento
 </div>
 
 <section class="hero">
@@ -1055,7 +1146,7 @@ src="https://www.facebook.com/tr?id=4710974462467197&ev=PageView&noscript=1"
     <h1>Seu filho está seguro<br>enquanto <em>joga online?</em></h1>
 
     <p class="hero-sub">
-      O guia definitivo para pais de crianças de 6 a 12 anos que usam Roblox, Minecraft e Fortnite — com estratégias reais, sem alarmismo, para proteger quem você mais ama.
+      O guia definitivo para pais de crianças de 6 a 12 anos que usam Roblox, Minecraft e Fortnite. Com estratégias reais, sem alarmismo, para proteger quem você mais ama.
     </p>
 
     <div class="book-wrap">
@@ -1076,15 +1167,15 @@ src="https://www.facebook.com/tr?id=4710974462467197&ev=PageView&noscript=1"
     <div class="hero-price-block">
       <div class="price-old">De R$47</div>
       <div class="price-main"><sup>R$</sup>27<span>,00</span></div>
-      <div class="price-badge">⚡ Oferta de lançamento</div>
+      <div class="price-badge">⚡ Baixe hoje por R$27 — preço de lançamento</div>
     </div>
 
     <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-cta hotmart-fb hotmart__button-checkout" onclick="ttq.track('InitiateCheckout'); fbq('track', 'InitiateCheckout'); gtag('event', 'begin_checkout', {currency: 'BRL', value: 27.00});">
-      Quero proteger meu filho agora
+      Baixar o guia por R$27 agora
       <span class="arrow">→</span>
     </a>
 
-    <p class="hero-guarantee">Garantia de 7 dias — reembolso total sem perguntas</p>
+    <p class="hero-guarantee">Baixe sem risco — garantia de 7 dias, reembolso total sem perguntas</p>
   </div>
 </section>
 
@@ -1394,17 +1485,17 @@ src="https://www.facebook.com/tr?id=4710974462467197&ev=PageView&noscript=1"
 <section class="cta-final" id="comprar">
   <div class="container">
     <h2>A conversa que<br><em style="font-style:italic; color:var(--navy-mid);">salva crianças</em><br>começa aqui.</h2>
-    <p>Acesso imediato. Leia hoje. Aplique ainda esta semana.</p>
+    <p>Baixe agora. Leia hoje. Aplique ainda esta semana.</p>
 
     <div class="price-box reveal">
-      <div class="price-from">De R$47 por apenas</div>
+      <div class="price-from">Baixe agora — de R$47 por apenas</div>
       <div class="price-big"><sup>R$</sup>27</div>
-      <div class="price-installment">Pagamento único · Acesso vitalício</div>
+      <div class="price-installment">Pagamento único · Acesso vitalício · PDF imediato</div>
     </div>
 
     <br>
     <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-cta hotmart-fb hotmart__button-checkout" style="font-size:18px; padding:20px 52px;" onclick="ttq.track('InitiateCheckout'); fbq('track', 'InitiateCheckout'); gtag('event', 'begin_checkout', {currency: 'BRL', value: 27.00});">
-      Comprar agora com garantia
+      Baixar agora por R$27 — com garantia
       <span class="arrow">→</span>
     </a>
 
@@ -1461,9 +1552,9 @@ src="https://www.facebook.com/tr?id=4710974462467197&ev=PageView&noscript=1"
 
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-bar-text">
-    <strong>R$27</strong><br>Acesso imediato + 3 bônus
+    <strong>Baixe por R$27</strong><br>Acesso imediato + 3 bônus
   </div>
-  <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-sticky hotmart-fb hotmart__button-checkout" onclick="ttq.track('InitiateCheckout'); fbq('track', 'InitiateCheckout'); gtag('event', 'begin_checkout', {currency: 'BRL', value: 27.00});">Comprar agora →</a>
+  <a href="https://pay.hotmart.com/L104683006Q?checkoutMode=2" class="btn-sticky hotmart-fb hotmart__button-checkout" onclick="ttq.track('InitiateCheckout'); fbq('track', 'InitiateCheckout'); gtag('event', 'begin_checkout', {currency: 'BRL', value: 27.00});">Baixar agora →</a>
 </div>
 
 <script>
@@ -1507,6 +1598,37 @@ src="https://www.facebook.com/tr?id=4710974462467197&ev=PageView&noscript=1"
       });
     }
   });
+
+  // Countdown timer — 15 minutes, persisted per session
+  (function() {
+    const DURATION = 15 * 60; // seconds
+    const KEY = 'cdEnd';
+    let endTime = parseInt(sessionStorage.getItem(KEY));
+    if (!endTime || endTime < Date.now()) {
+      endTime = Date.now() + DURATION * 1000;
+      sessionStorage.setItem(KEY, endTime);
+    }
+    const h = document.getElementById('cdH');
+    const m = document.getElementById('cdM');
+    const s = document.getElementById('cdS');
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function tick() {
+      const diff = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+      if (diff === 0) {
+        // Reset for another round
+        endTime = Date.now() + DURATION * 1000;
+        sessionStorage.setItem(KEY, endTime);
+      }
+      const hrs = Math.floor(diff / 3600);
+      const mins = Math.floor((diff % 3600) / 60);
+      const secs = diff % 60;
+      h.textContent = pad(hrs);
+      m.textContent = pad(mins);
+      s.textContent = pad(secs);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
 </script>
 
 <script type="text/javascript">
